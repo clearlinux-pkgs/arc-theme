@@ -1,0 +1,1 @@
+--disable-cinnamon --disable-gnome-shell --disable-gtk3 --disable-metacity --enable-gtk2 --enable-xfwm --enable-light --enable-darker --enable-dark
