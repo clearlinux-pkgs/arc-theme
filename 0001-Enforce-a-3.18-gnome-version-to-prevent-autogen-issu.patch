@@ -1,0 +1,23 @@
+From 761ae0f19f791d65c10a8d56254f5531a01150e5 Mon Sep 17 00:00:00 2001
+From: Ikey Doherty <michael.i.doherty@intel.com>
+Date: Thu, 28 Jan 2016 13:50:09 +0000
+Subject: [PATCH] Enforce a 3.18 gnome version to prevent autogen issues
+
+Signed-off-by: Ikey Doherty <michael.i.doherty@intel.com>
+---
+ autogen.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/autogen.sh b/autogen.sh
+index 0e36e12..42c6e3b 100755
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -10,4 +10,4 @@ mkdir -p m4
+ autoreconf --verbose --force --install || exit $?
+ 
+ cd "$cwd"
+-"$srcdir/configure" $@
++"$srcdir/configure" $@ --with-gnome=3.18
+-- 
+2.7.0
+
