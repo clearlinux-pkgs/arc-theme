@@ -4,7 +4,7 @@
 #
 Name     : arc-theme
 Version  : 20160331
-Release  : 4
+Release  : 5
 URL      : https://github.com/horst3180/arc-theme/archive/20160331.tar.gz
 Source0  : https://github.com/horst3180/arc-theme/archive/20160331.tar.gz
 Summary  : No detailed summary available
