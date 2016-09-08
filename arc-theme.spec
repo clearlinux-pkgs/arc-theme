@@ -4,14 +4,14 @@
 #
 Name     : arc-theme
 Version  : 20160605
-Release  : 9
+Release  : 10
 URL      : https://github.com/horst3180/arc-theme/archive/20160605.tar.gz
 Source0  : https://github.com/horst3180/arc-theme/archive/20160605.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: arc-theme-data
-Patch1: 0001-Enforce-a-3.18-gnome-version-to-prevent-autogen-issu.patch
+Patch1: 0001-Enforce-a-3.20-gnome-version-to-prevent-autogen-issu.patch
 
 %description
 # Arc Theme
@@ -30,7 +30,8 @@ data components for the arc-theme package.
 %patch1 -p1
 
 %build
-%autogen --disable-static --disable-cinnamon --disable-unity --disable-gnome-shell --enable-gtk3 --disable-metacity --enable-gtk2 --enable-xfce-notify --enable-xfwm --enable-light --enable-darker --enable-dark --with-gnome=3.18
+export LANG=C
+%autogen --disable-static --disable-cinnamon --disable-unity --disable-gnome-shell --enable-gtk3 --disable-metacity --enable-gtk2 --enable-xfce-notify --enable-xfwm --enable-light --enable-darker --enable-dark --with-gnome=3.20
 make V=1  %{?_smp_mflags}
 
 %check
