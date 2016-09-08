@@ -1,1 +1,1 @@
---disable-cinnamon --disable-unity --disable-gnome-shell --enable-gtk3 --disable-metacity --enable-gtk2 --enable-xfce-notify --enable-xfwm --enable-light --enable-darker --enable-dark --with-gnome=3.18 
+--disable-cinnamon --disable-unity --disable-gnome-shell --enable-gtk3 --disable-metacity --enable-gtk2 --enable-xfce-notify --enable-xfwm --enable-light --enable-darker --enable-dark --with-gnome=3.20
