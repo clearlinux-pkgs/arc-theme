@@ -4,14 +4,14 @@
 #
 Name     : arc-theme
 Version  : 20170302
-Release  : 13
+Release  : 14
 URL      : https://github.com/horst3180/arc-theme/archive/20170302.tar.gz
 Source0  : https://github.com/horst3180/arc-theme/archive/20170302.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: arc-theme-data
-Patch1: 0001-Enforce-a-3.20-gnome-version-to-prevent-autogen-issu.patch
+Patch1: 0001-Enforce-a-3.22-gnome-version-to-prevent-autogen-issu.patch
 
 %description
 # Arc Theme
@@ -31,8 +31,8 @@ data components for the arc-theme package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1489673401
-%autogen --disable-static --disable-cinnamon --disable-unity --disable-gnome-shell --enable-gtk3 --disable-metacity --enable-gtk2 --enable-xfce-notify --enable-xfwm --enable-light --enable-darker --enable-dark --with-gnome=3.20
+export SOURCE_DATE_EPOCH=1491833941
+%autogen --disable-static --disable-cinnamon --disable-unity --enable-gnome-shell --enable-gtk3 --disable-metacity --enable-gtk2 --enable-xfce-notify --enable-xfwm --enable-light --enable-darker --enable-dark --with-gnome=3.22
 make V=1  %{?_smp_mflags}
 
 %check
@@ -43,7 +43,7 @@ export no_proxy=localhost
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1489673401
+export SOURCE_DATE_EPOCH=1491833941
 rm -rf %{buildroot}
 %make_install
 
@@ -52,6 +52,57 @@ rm -rf %{buildroot}
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/dash-left.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/dash-placeholder.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/dash-right.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running1.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running2.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running3.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running4.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/menu/menu-hover.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/menu/menu-separator.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/bg.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/close-active.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/close-hover.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/close.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/corner-ripple-ltr.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/corner-ripple-rtl.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/more-results.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/osd.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/page-indicator-active.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/page-indicator-checked.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/page-indicator-hover.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/page-indicator-inactive.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/process-working.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/ws-switch-arrow-down.png
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/ws-switch-arrow-up.png
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/panel/activities-active.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/panel/activities.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/panel/panel-overview.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/panel/panel.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/switch/switch-off-selected.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/switch/switch-on-selected.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/checkbox/checkbox-checked-focused.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/checkbox/checkbox-checked.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/checkbox/checkbox-unchecked-focused.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/checkbox/checkbox-unchecked.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/menu/menu.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/menu/submenu-open.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/menu/submenu.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/calendar-arrow-left-hover.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/calendar-arrow-left.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/calendar-arrow-right-hover.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/calendar-arrow-right.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/message-active.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/message-close-active.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/message-close-hover.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/message-close.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/message-hover.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/message.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/misc/modal.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/switch/switch-off.svg
+/usr/share/themes/Arc-Dark/gnome-shell/dark-assets/switch/switch-on.svg
+/usr/share/themes/Arc-Dark/gnome-shell/gnome-shell.css
 /usr/share/themes/Arc-Dark/gtk-2.0/apps.rc
 /usr/share/themes/Arc-Dark/gtk-2.0/assets/arrow-down-insens.png
 /usr/share/themes/Arc-Dark/gtk-2.0/assets/arrow-down-prelight.png
@@ -795,6 +846,57 @@ rm -rf %{buildroot}
 /usr/share/themes/Arc-Darker/xfwm4/top-left-inactive.png
 /usr/share/themes/Arc-Darker/xfwm4/top-right-active.png
 /usr/share/themes/Arc-Darker/xfwm4/top-right-inactive.png
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/dash-left.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/dash-placeholder.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/dash-right.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/running1.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/running2.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/running3.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/running4.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/menu/menu-hover.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/menu/menu-separator.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/bg.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/close-active.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/close-hover.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/close.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/corner-ripple-ltr.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/corner-ripple-rtl.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/more-results.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/osd.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/page-indicator-active.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/page-indicator-checked.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/page-indicator-hover.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/page-indicator-inactive.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/process-working.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/ws-switch-arrow-down.png
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/ws-switch-arrow-up.png
+/usr/share/themes/Arc/gnome-shell/common-assets/panel/activities-active.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/panel/activities.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/panel/panel-overview.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/panel/panel.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/switch/switch-off-selected.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/switch/switch-on-selected.svg
+/usr/share/themes/Arc/gnome-shell/gnome-shell.css
+/usr/share/themes/Arc/gnome-shell/light-assets/checkbox/checkbox-checked-focused.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/checkbox/checkbox-checked.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/checkbox/checkbox-unchecked-focused.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/checkbox/checkbox-unchecked.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/menu/menu.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/menu/submenu-open.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/menu/submenu.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/calendar-arrow-left-hover.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/calendar-arrow-left.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/calendar-arrow-right-hover.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/calendar-arrow-right.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/message-active.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/message-close-active.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/message-close-hover.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/message-close.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/message-hover.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/message.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/misc/modal.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/switch/switch-off.svg
+/usr/share/themes/Arc/gnome-shell/light-assets/switch/switch-on.svg
 /usr/share/themes/Arc/gtk-2.0/apps.rc
 /usr/share/themes/Arc/gtk-2.0/assets/arrow-down-insens.png
 /usr/share/themes/Arc/gtk-2.0/assets/arrow-down-prelight.png
