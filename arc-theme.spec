@@ -4,7 +4,7 @@
 #
 Name     : arc-theme
 Version  : 20170302
-Release  : 15
+Release  : 16
 URL      : https://github.com/horst3180/arc-theme/archive/20170302.tar.gz
 Source0  : https://github.com/horst3180/arc-theme/archive/20170302.tar.gz
 Summary  : No detailed summary available
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: arc-theme-data
 Patch1: 0001-Enforce-a-3.22-gnome-version-to-prevent-autogen-issu.patch
+Patch2: gnome324.patch
 
 %description
 # Arc Theme
@@ -28,10 +29,14 @@ data components for the arc-theme package.
 %prep
 %setup -q -n arc-theme-20170302
 %patch1 -p1
+%patch2 -p1
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1491833941
+export SOURCE_DATE_EPOCH=1494865668
 %autogen --disable-static --disable-cinnamon --disable-unity --enable-gnome-shell --enable-gtk3 --disable-metacity --enable-gtk2 --enable-xfce-notify --enable-xfwm --enable-light --enable-darker --enable-dark --with-gnome=3.22
 make V=1  %{?_smp_mflags}
 
@@ -39,11 +44,11 @@ make V=1  %{?_smp_mflags}
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1491833941
+export SOURCE_DATE_EPOCH=1494865668
 rm -rf %{buildroot}
 %make_install
 
@@ -62,6 +67,7 @@ rm -rf %{buildroot}
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/menu/menu-hover.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/menu/menu-separator.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/bg.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/calendar-today.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/close-active.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/close-hover.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/misc/close.svg
@@ -856,6 +862,7 @@ rm -rf %{buildroot}
 /usr/share/themes/Arc/gnome-shell/common-assets/menu/menu-hover.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/menu/menu-separator.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/misc/bg.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/misc/calendar-today.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/misc/close-active.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/misc/close-hover.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/misc/close.svg
