@@ -1,2 +1,10 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
+# gtk-pixbuf should not be needed because inkscape is missing a runtime requirement
+gdk-pixbuf
+gtk3
+gtk3-dev
+gnome-shell
+inkscape
+optipng
+sassc
