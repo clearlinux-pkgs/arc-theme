@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x51DAE9B7C1AE9161 (pgp@nicohood.de)
 #
 Name     : arc-theme
-Version  : 20181022
-Release  : 21
-URL      : https://github.com/NicoHood/arc-theme/releases/download/20181022/arc-theme-20181022.tar.xz
-Source0  : https://github.com/NicoHood/arc-theme/releases/download/20181022/arc-theme-20181022.tar.xz
-Source99 : https://github.com/NicoHood/arc-theme/releases/download/20181022/arc-theme-20181022.tar.xz.asc
+Version  : 20190213
+Release  : 22
+URL      : https://github.com/NicoHood/arc-theme/releases/download/20190213/arc-theme-20190213.tar.xz
+Source0  : https://github.com/NicoHood/arc-theme/releases/download/20190213/arc-theme-20190213.tar.xz
+Source99 : https://github.com/NicoHood/arc-theme/releases/download/20190213/arc-theme-20190213.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -45,14 +45,14 @@ license components for the arc-theme package.
 
 
 %prep
-%setup -q -n arc-theme-20181022
+%setup -q -n arc-theme-20190213
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548579089
+export SOURCE_DATE_EPOCH=1550504400
 %autogen --disable-static --with-gnome-shell=3.30 --disable-cinnamon --disable-metacity --disable-unity --disable-plank --disable-openbox
 make  %{?_smp_mflags}
 
@@ -64,7 +64,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1548579089
+export SOURCE_DATE_EPOCH=1550504400
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/arc-theme
 cp COPYING %{buildroot}/usr/share/package-licenses/arc-theme/COPYING
