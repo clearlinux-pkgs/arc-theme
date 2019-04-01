@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x51DAE9B7C1AE9161 (pgp@nicohood.de)
 #
 Name     : arc-theme
-Version  : 20190213
-Release  : 22
-URL      : https://github.com/NicoHood/arc-theme/releases/download/20190213/arc-theme-20190213.tar.xz
-Source0  : https://github.com/NicoHood/arc-theme/releases/download/20190213/arc-theme-20190213.tar.xz
-Source99 : https://github.com/NicoHood/arc-theme/releases/download/20190213/arc-theme-20190213.tar.xz.asc
+Version  : 20190330
+Release  : 23
+URL      : https://github.com/NicoHood/arc-theme/releases/download/20190330/arc-theme-20190330.tar.xz
+Source0  : https://github.com/NicoHood/arc-theme/releases/download/20190330/arc-theme-20190330.tar.xz
+Source99 : https://github.com/NicoHood/arc-theme/releases/download/20190330/arc-theme-20190330.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -45,14 +45,14 @@ license components for the arc-theme package.
 
 
 %prep
-%setup -q -n arc-theme-20190213
+%setup -q -n arc-theme-20190330
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550504400
+export SOURCE_DATE_EPOCH=1554130446
 %autogen --disable-static --with-gnome-shell=3.30 --disable-cinnamon --disable-metacity --disable-unity --disable-plank --disable-openbox
 make  %{?_smp_mflags}
 
@@ -64,7 +64,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1550504400
+export SOURCE_DATE_EPOCH=1554130446
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/arc-theme
 cp COPYING %{buildroot}/usr/share/package-licenses/arc-theme/COPYING
@@ -78,9 +78,13 @@ cp COPYING %{buildroot}/usr/share/package-licenses/arc-theme/COPYING
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/dash-left.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/dash-placeholder.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/dash-right.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running1-hover.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running1.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running2-hover.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running2.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running3-hover.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running3.svg
+/usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running4-hover.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/dash/running4.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/menu/menu-hover.svg
 /usr/share/themes/Arc-Dark/gnome-shell/common-assets/menu/menu-separator.svg
@@ -525,9 +529,13 @@ cp COPYING %{buildroot}/usr/share/package-licenses/arc-theme/COPYING
 /usr/share/themes/Arc/gnome-shell/common-assets/dash/dash-left.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/dash/dash-placeholder.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/dash/dash-right.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/running1-hover.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/dash/running1.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/running2-hover.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/dash/running2.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/running3-hover.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/dash/running3.svg
+/usr/share/themes/Arc/gnome-shell/common-assets/dash/running4-hover.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/dash/running4.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/menu/menu-hover.svg
 /usr/share/themes/Arc/gnome-shell/common-assets/menu/menu-separator.svg
